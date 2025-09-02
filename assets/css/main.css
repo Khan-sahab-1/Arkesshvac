@@ -1463,7 +1463,7 @@ input[type="submit"] {
 }
 
 .homepage-bg-2 {
-  background-image: url("file:///home/sandeep/Desktop/Developement/Arke%20HVAC/images/slidernew5.jpg");
+  background-image: url("../img/Vantilationsystem.jpg");
 }
 
 .homepage-bg-3 {
@@ -2119,7 +2119,7 @@ a.video-play-btn {
 }
 
 .abt-text p {
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.6;
   margin-bottom: 10px;
 }
