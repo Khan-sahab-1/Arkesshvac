@@ -17,7 +17,7 @@
 		CONTENT="Chadha Industries, Arke HVAC, Arkehvac, Arke Hvac, Breezair TB Series, Breezair RPB Series, Climate Wizard, Breezair TBS/TBQ, Breezair by Seeley International, Seeley International, Climate Wizard P15, Climate Wizard H15, Natural Cooling, Breezair." />
 
 	<meta name="Description"
-		CONTENT="Chadha Industries dates back to a humble start in the early 60’s with manufacturing of Filter cartridges for the automotive sector which has grown over the years into a variety of other product category and range. With ever growing hunger for growth the company ventured into HVAC sector starting late 2018 by taking distributorship of Australia based company Seeley International. With this a new chapter unfolded into the field of Direct and Indirect evaporative cooling for Residential, Commercial and Industrial sector." />
+		CONTENT="Chadha Industries dates back to a humble start in the early 60's with manufacturing of Filter cartridges for the automotive sector which has grown over the years into a variety of other product category and range. With ever growing hunger for growth the company ventured into HVAC sector starting late 2018 by taking distributorship of Australia based company Seeley International. With this a new chapter unfolded into the field of Direct and Indirect evaporative cooling for Residential, Commercial and Industrial sector." />
 
 	<meta name="abstract"
 		content="Chadha Industries, Arke HVAC, Arkehvac, Arke Hvac, Breezair TB Series, Breezair RPB Series, Climate Wizard, Breezair TBS/TBQ, Breezair by Seeley International, Seeley International, Climate Wizard P15, Climate Wizard H15, Natural Cooling, Breezair." />
@@ -55,253 +55,26 @@
   	<link rel="stylesheet" href="assets/css/responsive.css">
     
     <style>
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #f8f9fa;
-        color: #333;
-        padding-bottom: 40px;
-      }
-      .header {
-        background: linear-gradient(135deg, #1a6fc4 0%, #0d4a85 100%);
-        color: white;
-        padding: 30px 0;
-        margin-bottom: 30px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      }
-      .org-container {
-        padding: 20px;
-        margin-top: 120px;
-      }
+      /* Additional styles for better organization chart display */
       .org-chart {
-        background: white;
-        border-radius: 12px;
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-        padding: 30px;
-        margin-bottom: 40px;
-        overflow-x: auto;
+        padding: 20px 0;
+        /* background-color: #f8f9fa; */
       }
-      .org-node {
-        background: white;
+      
+      .org-full-img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 12px;
-        text-align: center;
-        transition: all 0.3s ease;
-        margin: 10px auto;
-        min-width: 160px;
-        max-width: 200px;
-        border-top: 4px solid #508dde;
-        position: relative;
-        z-index: 2;
-        margin: 10px;
       }
-      .org-node:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      
+      .org-container {
+        padding: 40px 0;
       }
-      .org-node.ceo {
-        background: #508dde;
-        color: white;
-        border-top: 4px solid #3a68b3;
-      }
-      .org-node.director {
-        background: #3a68b3;
-        color: white;
-        border-top: 4px solid #2a4d87;
-      }
-      .org-node.manager {
-        background: #f8f9fa;
-        border-top: 4px solid #508dde;
-      }
-      .org-node.executive {
-        background: #e9ecef;
-        border-top: 4px solid #6c757d;
-      }
-      .org-node.staff {
-        background: #dee2e6;
-        border-top: 4px solid #495057;
-      }
-      .org-node h5 {
-        font-weight: 600;
-        margin-bottom: 5px;
-        font-size: 16px;
-      }
-      .org-node p {
-        font-size: 13px;
-        margin-bottom: 0;
-        color: #6c757d;
-      }
-      .org-node.ceo p,
-      .org-node.director p {
-        color: rgba(255, 255, 255, 0.9);
-      }
-
-      /* Arrow styling */
-      .arrow-down {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 15px 0;
-        color: #508dde;
-        font-size: 24px;
-        animation: bounce 2s infinite;
-      }
-
-      @keyframes bounce {
-        0%,
-        20%,
-        50%,
-        80%,
-        100% {
-          transform: translateY(0);
-        }
-        40% {
-          transform: translateY(-10px);
-        }
-        60% {
-          transform: translateY(-5px);
-        }
-      }
-
-      /* Chart structure */
-      .chart-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: relative;
-        width: 100%;
-      }
-
-      /* Levels */
-      .level {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        position: relative;
-        margin-bottom: 20px;
-      }
-
-      /* Connector lines */
-      .connector {
-        position: absolute;
-        background-color: #6c757d;
-        z-index: 1;
-      }
-
-      /* Vertical connectors between levels */
-      .vertical-connector {
-        width: 2px;
-        height: 40px;
-        top: -20px;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: rgb(8, 8, 8);
-      }
-
-      /* Horizontal connectors between nodes */
-      .horizontal-connector {
-        height: 2px;
-        top: 50%;
-        transform: translateY(-50%);
-      }
-
-      /* Child connectors */
-      .children {
-        display: flex;
-        justify-content: center;
-        position: relative;
-        width: 100%;
-        gap: 15px;
-        flex-wrap: wrap;
-      }
-
-      /* For nodes with children */
-      .node-with-children {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: relative;
-        margin: 5px;
-      }
-
-      /* Engineering branch styling */
-      .engineering-branch {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 20px 0;
-        padding: 20px;
-        background: rgba(80, 141, 222, 0.05);
-        border-radius: 12px;
-        border: 2px dashed #508dde;
-      }
-
-      .branch-title {
-        color: #508dde;
-        font-weight: bold;
-        margin-bottom: 15px;
-        font-size: 18px;
-      }
-
-      /* Responsive adjustments */
-      @media (max-width: 768px) {
-        .org-chart {
-          padding: 15px;
-        }
-
-        .level {
-          flex-direction: column;
-          align-items: center;
-          margin-bottom: 15px;
-        }
-
-        .children {
-          flex-direction: column;
-          align-items: center;
-          gap: 10px;
-        }
-
-        .org-node {
-          min-width: 140px;
-          margin: 8px auto;
-          padding: 10px;
-        }
-
-        .org-node h5 {
-          font-size: 14px;
-        }
-
-        .org-node p {
-          font-size: 12px;
-        }
-
-        .arrow-down {
-          font-size: 20px;
-          margin: 10px 0;
-        }
-
-        .engineering-branch {
-          margin: 15px 0;
-          padding: 15px;
-        }
-      }
-
-      .description {
-        background: white;
-        border-radius: 12px;
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-        padding: 25px;
-        margin-top: 30px;
-      }
-      .branches-wrapper {
-  display: flex;
-  justify-content: space-between;
-  gap: 50px;
-  /* gap: 20px; */
-}
-
-
     </style>
+  
   </head>
   <body>
     <div class="top-header-area" id="sticker" style="background-color: #051922;">
@@ -381,317 +154,28 @@
 
 
     <div class="org-container">
-      <div class="org-chart">
-        <div class="text-center mb-4">
-          <p class="fw-bold fs-5" style="color: #508dde">
-            At Chadha Industries, we have a well-defined structure that ensures
-            efficient operations and clear lines of responsibility.
-          </p>
-        </div>
-
-        <!-- Organization Structure -->
-        <div class="chart-wrapper">
-          <!-- CEO Level -->
-          <div class="level">
-            <div class="org-node ceo">
-              <h5>Chadha Industries Pvt. Ltd</h5>
-              <p>Leadership</p>
-            </div>
-          </div>
-
-          <!-- Arrow after CEO -->
-          <div class="arrow-down">
-            <i class="fas fa-arrow-down"></i>
-          </div>
-
-          <!-- Director Level -->
-          <div class="level">
-            <div class="org-node director">
-              <h5>Director</h5>
-            </div>
-          </div>
-
-          <!-- Arrow after Director -->
-          <div class="arrow-down">
-            <i class="fas fa-arrow-down"></i>
-          </div>
-
-          <!-- Manager Level -->
-          <div class="level">
-            <div class="children">
-              <div class="node-with-children">
-                <div class="org-node manager">
-                  <h5>HR & Admin</h5>
-                </div>
-                <!-- Arrow after HR & Admin Manager -->
-                <div class="arrow-down">
-                  <i class="fas fa-arrow-down"></i>
-                </div>
-              </div>
-
-              <div class="node-with-children">
-                <div class="org-node manager">
-                  <h5>Accounting</h5>
-                </div>
-                <!-- Arrow after Accounting Manager -->
-                <div class="arrow-down">
-                  <i class="fas fa-arrow-down"></i>
-                </div>
-              </div>
-
-              <div class="node-with-children">
-                <div class="org-node manager">
-                  <h5>Engineering</h5>
-                </div>
-                <div class="arrow-down">
-                  <i class="fas fa-arrow-down"></i>
-                </div>
-              </div>
-
-              <div class="node-with-children">
-                <div class="org-node manager">
-                  <h5>Sales & Purchase</h5>
-                </div>
-                <!-- Arrow after Sales & Purchase Manager -->
-                <div class="arrow-down">
-                  <i class="fas fa-arrow-down"></i>
-                </div>
-              </div>
-
-              <div class="node-with-children">
-                <div class="org-node manager">
-                  <h5>Quality Control</h5>
-                </div>
-                <!-- Arrow after Quality Control Manager -->
-                <div class="arrow-down">
-                  <i class="fas fa-arrow-down"></i>
-                </div>
-              </div>
-
-              <div class="node-with-children">
-                <div class="org-node manager">
-                  <h5>Manager (Sales & BD)</h5>
-                </div>
-                <!-- Arrow after Sales & BD Manager -->
-                <div class="arrow-down">
-                  <i class="fas fa-arrow-down"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="level">
-            <div class="children">
-              <div class="node-with-children">
-                <div class="org-node manager">
-                  <h5>HR & Admin</h5>
-                </div>
-                <!-- Arrow after HR & Admin Manager -->
-                <!-- <div class="arrow-down">
-                  <i class="fas fa-arrow-down"></i>
-                </div> -->
-              </div>
-
-              <div class="node-with-children">
-                <div class="org-node manager">
-                  <h5>Accounting</h5>
-                </div>
-                <!-- Arrow after Accounting Manager -->
-                <!-- <div class="arrow-down">
-                  <i class="fas fa-arrow-down"></i>
-                </div> -->
-              </div>
-
-              <div class="node-with-children">
-                <div class="org-node manager">
-                  <h5>Engineering</h5>
-                </div>
-                <div class="arrow-down">
-                  <i class="fas fa-arrow-down"></i>
-                </div>
-              </div>
-
-              <div class="node-with-children">
-                <div class="org-node manager">
-                  <h5>Sales & Purchase</h5>
-                </div>
-                <!-- Arrow after Sales & Purchase Manager -->
-                <!-- <div class="arrow-down">
-                  <i class="fas fa-arrow-down"></i>
-                </div> -->
-              </div>
-
-              <div class="node-with-children">
-                <div class="org-node manager">
-                  <h5>Quality Control</h5>
-                </div>
-                <!-- Arrow after Quality Control Manager -->
-              </div>
-
-              <div class="node-with-children">
-                <div class="org-node manager">
-                  <h5> Asst.Manager</h5>
-                </div>
-                <!-- Arrow after Sales & BD Manager -->
-                 <div class="arrow-down">
-                  <i class="fas fa-arrow-down"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Engineering Branch -->
-           <div class="branches-wrapper">
-          <div class="engineering-branch">
-            <!-- <div class="branch-title">Engineering Department Structure</div> -->
-
-            <!-- Manager Level under Engineering -->
-            <div class="level">
-              <div class="org-node manager">
-                <h5>Manager</h5>
-                <p>Engineering</p>
-              </div>
-            </div>
-
-            <!-- Arrow after Engineering Manager -->
-            <div class="arrow-down">
-              <i class="fas fa-arrow-down"></i>
-            </div>
-
-            <!-- Project and Safety Level -->
-            <div class="level">
-              <div class="children">
-                <div class="node-with-children">
-                  <div class="org-node executive">
-                    <h5>Project Incharge</h5>
-                  </div>
-                  <!-- Arrow after Project Incharge -->
-                  <div class="arrow-down">
-                    <i class="fas fa-arrow-down"></i>
-                  </div>
-                </div>
-
-                <div class="node-with-children">
-                  <div class="org-node executive">
-                    <h5>Safety Officer</h5>
-                  </div>
-                  <!-- Arrow after Safety Officer -->
-                  <div class="arrow-down">
-                    <i class="fas fa-arrow-down"></i>
-                  </div>
-                </div>
-
-                <div class="node-with-children">
-                  <div class="org-node executive">
-                    <h5>Design Engineering</h5>
-                  </div>
-                </div>
-
-                <div class="node-with-children">
-                  <div class="org-node executive">
-                    <h5>Technical Executive</h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Staff Level under Project and Safety -->
-            <div class="level">
-              <div class="children">
-                <div class="node-with-children">
-                  <div class="org-node staff">
-                    <h5>Supervisor</h5>
-                  </div>
-                </div>
-
-                <div class="node-with-children">
-                  <div class="org-node staff">
-                    <h5>Safety Engineers</h5>
-                  </div>
-                </div>
-
-                <div class="node-with-children">
-                  <div class="org-node staff">
-                    <h5>Technicians</h5>
-                  </div>
-                </div>
-
-                <div class="node-with-children">
-                  <div class="org-node staff">
-                    <h5>Executive Team</h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class=""  style="margin-left: 70px;">
-            <!-- <div class="branch-title">Engineering Department Structure</div> -->
-
-            <!-- Manager Level under Engineering -->
-            <div class="level">
-              <div class="org-node manager">
-                <h5>sr Sales Executive</h5>
-                <!-- <p>Engineering</p> -->
-              </div>
-            </div>
-
-            <!-- Arrow after Engineering Manager -->
-            <div class="arrow-down">
-              <i class="fas fa-arrow-down"></i>
-            </div>
-
-            <!-- Project and Safety Level -->
-            <div class="level">
-              <div class="children">
-                <div class="node-with-children">
-                  <div class="org-node executive">
-                    <h5>Sales Executive</h5>
-                  </div>
-                  <!-- Arrow after Project Incharge -->
-                  <!-- <div class="arrow-down">
-                    <i class="fas fa-arrow-down"></i>
-                  </div> -->
-                </div>
-
-               
-
-              
-
-
-            <!-- Staff Level under Project and Safety -->
-            <!-- <div class="level">
-             
-
-               
-                
-
-                <div class="node-with-children">
-                  <div class="org-node staff">
-                    <h5>Executive Team</h5>
-                  </div>
-                </div>
-              </div> -->
-            </div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10 text-center mb-4">
+            <p class="fw-bold fs-5" style="color: #508dde">
+              At Chadha Industries, we have a well-defined structure that ensures
+              efficient operations and clear lines of responsibility.
+            </p>
           </div>
         </div>
-      </div>
+        
+        <!-- Hero Section -->
+        <div class="row justify-content-center">
+          <div class="col-lg-10 text-center mb-4">
+            <!-- <h2 class="fw-bold" style="color: #051922">Organization Chart</h2> -->
+          </div>
+        </div>
 
-      <div class="description">
-        <div class="row">
-          <div class="col-lg-8 offset-lg-2 text-center">
-            <h3 class="mb-4">Our Organizational Structure</h3>
-            <p>
-              Our organizational structure is designed to promote efficiency,
-              accountability, and seamless communication across all departments.
-              Each team works in close coordination to deliver exceptional HVAC
-              solutions to our clients.
-            </p>
-            <p>
-              The leadership team brings together decades of experience in the
-              HVAC industry, ensuring that Chadha Industries remains at the
-              forefront of innovation and customer service. The Engineering
-              department has a specialized structure to handle complex HVAC
-              projects effectively.
-            </p>
+        <div class="row justify-content-center">
+          <div class="col-lg-12">
+            <div class="org-chart">
+              <img src="./assets/img/Chart.png" alt="Organization Chart" class="org-full-img">
+            </div>
           </div>
         </div>
       </div>
@@ -750,10 +234,7 @@
       </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
-      
-
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/jquery-1.11.3.min.js"></script>
 	<!-- bootstrap -->
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>

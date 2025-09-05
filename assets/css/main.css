@@ -3136,6 +3136,24 @@ h3.subtitle {
             width: 120px;
             padding: 15px;
         }
-        
+        .org-chart {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.org-chart {
+  display: flex;
+  justify-content: center; /* centers horizontally */
+  align-items: center;     /* centers vertically if parent has height */
+  margin-top: 200px;       /* push down 200px */
+}
+
+.org-full-img {
+  max-width: 100%;
+  height: auto;
+}
+
+
 
     }
